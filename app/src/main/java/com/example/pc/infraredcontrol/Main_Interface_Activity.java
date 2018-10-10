@@ -39,7 +39,7 @@ public class Main_Interface_Activity extends AppCompatActivity {
             set_button_useful();
     }
     /**
-     * 当设备红外可用时才使所有按键有效
+     * 当设备有红外可用时才使所有按键有效
      */
     private void set_button_useful(){
         can_infrared=true;
@@ -52,5 +52,6 @@ public class Main_Interface_Activity extends AppCompatActivity {
     }
 
     //github test
+
 
 }
