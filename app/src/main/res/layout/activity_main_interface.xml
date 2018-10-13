@@ -76,6 +76,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:background=""
             android:id="@+id/add"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

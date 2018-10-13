@@ -2,12 +2,13 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:interpolator="@android:anim/linear_interpolator">
     <scale android:fromXScale="1.0"
-        android:toXScale="0.01"
+        android:toXScale="0.8"
         android:fromYScale="1.0"
-        android:toYScale="0.01"
+        android:toYScale="0.8"
         android:pivotX="50%"
         android:pivotY="50%"
         android:fillAfter="true"
+
         />
 
 </set>
