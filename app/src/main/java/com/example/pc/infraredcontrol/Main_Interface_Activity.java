@@ -23,9 +23,11 @@ public class Main_Interface_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_interface);
         intiset_button();
-        //设置背景
-        WallpaperManager wallpaperManager=WallpaperManager.getInstance(this);
-        Drawable drawable=wallpaperManager.getDrawable();
+        //加载第一份动画效果
+       // final Animation anim = AnimationUtils;
+        //把桌面背景设置为activity背景
+        WallpaperManager  manager=WallpaperManager.getInstance(this);
+        Drawable drawable=manager.getDrawable();
         this.getWindow().setBackgroundDrawable(drawable);
 
         t=findViewById(R.id.get);
