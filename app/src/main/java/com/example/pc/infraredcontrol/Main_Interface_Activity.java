@@ -1,8 +1,5 @@
 package com.example.pc.infraredcontrol;
 
-import android.app.WallpaperColors;
-import android.app.WallpaperManager;
-import android.graphics.drawable.Drawable;
 import android.hardware.ConsumerIrManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +12,7 @@ public class Main_Interface_Activity extends AppCompatActivity {
     Infrared_Control in_con;
     boolean can_infrared;
 
-    Button button_power,button_add,button_minus;
+    Button button_power;
 
     TextView t;
 
@@ -24,6 +21,8 @@ public class Main_Interface_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_interface);
         intiset_button();
+        //加载第一份动画效果
+       // final Animation anim = AnimationUtils;
         //把桌面背景设置为activity背景
         WallpaperManager  manager=WallpaperManager.getInstance(this);
         Drawable drawable=manager.getDrawable();
@@ -38,10 +37,6 @@ public class Main_Interface_Activity extends AppCompatActivity {
     private void intiset_button(){
         button_power=findViewById(R.id.power);
         button_power.setEnabled(false);
-        button_add=findViewById(R.id.add);
-        button_add.setEnabled(false);
-        button_minus=findViewById(R.id.minus);
-        button_minus.setEnabled(false);
     }
 
     protected void onStart() {
@@ -55,8 +50,6 @@ public class Main_Interface_Activity extends AppCompatActivity {
     private void set_button_useful(){
         can_infrared=true;
         button_power.setEnabled(true);
-        button_minus.setEnabled(true);
-        button_add.setEnabled(true);
     }
 
     public void button_power_onclick(View view){
@@ -64,18 +57,7 @@ public class Main_Interface_Activity extends AppCompatActivity {
         //in_con.get_mag(t);
     }
 
-    public void button_add_onclick(View view){
-
-    }
-
-    public void button_minus_onclick(View view){
-
-    }
-
     //github test
-
-
-
 
 
 }
