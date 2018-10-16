@@ -28,26 +28,21 @@ public class Main_Interface_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_interface);
         intiset_button();
-        //加载第一份动画效果
-        final Animation anim = AnimationUtils.loadAnimation(this,R.anim.anim);
-        //效果结束后保留动画资源
-        anim.setFillAfter(true);
-        //加载第二份动画
-        final Animation reverse = AnimationUtils.loadAnimation(this,R.anim.reverse);
-        //效果结束后保留动画资源
-        anim.setFillAfter(true);
         //设定监听
         button_power.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    button_power.startAnimation(anim);
-                    button_power.setBackgroundColor(Color.GRAY);
+                switch (motionEvent.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        button_power.setScaleX((float)0.95);
+                        button_power.setScaleY((float)0.95);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        button_power.setScaleX(1);
+                        button_power.setScaleY(1);
+                        break;
                 }
-                else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    button_power.startAnimation(reverse);
-                    button_power.setBackgroundColor(Color.WHITE);
-                }
+
                 return false;
             }
         });

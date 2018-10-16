@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:background=""
+            android:background="@drawable/background"
             android:id="@+id/add"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -88,6 +88,7 @@
             android:textSize="24sp" />
 
         <Button
+            android:background="@drawable/background"
             android:id="@+id/power"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -104,6 +105,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:background="@drawable/background"
             android:id="@+id/minus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
