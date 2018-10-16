@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void app_intiset(){
-        startActivity(new Intent(this,Main_Interface_Activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+        startActivity(new Intent(this,activity_study.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 }
