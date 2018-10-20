@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">InfraredControl</string>
+    <string name="study_s1">请将遥控器对准手机并按照接下来的提示操作</string>
+    <string name="study_s2">请长按下面的确定键并对准手机按下遥控器的%s键，等待一秒再松手</string>
+    <string name="study_s3">请长按下面的确定键并对准手机按下遥控器的%s键来录入%d度，等待一秒再松手</string>
+    <string name="study_s4">请将遥控器调整至22度再将遥控器对准手机并按接下来提示操作</string>
+    <string name="study_over">按键学习已完成！</string>
+    <string name="ok">确定</string>
 </resources>

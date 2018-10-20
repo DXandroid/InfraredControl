@@ -1,63 +1,81 @@
 package com.example.pc.infraredcontrol;
 
-import android.app.WallpaperManager;
+import android.app.ActivityOptions;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class activity_study extends AppCompatActivity {
+import org.w3c.dom.Text;
 
-    Button button_power_studying,button_add_studying,button_minus_studying;
-    TextView study_info,reminder;
-    //学习成果
-    boolean isSuccess;
+
+public class activity_study extends AppCompatActivity implements View.OnClickListener {
+
+    Button study;
+    TextView tip;
+    String btn[]={"开","关","+","+","+","+","+","+"};
+    int flag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setEnterTransition(new Explode());
         setContentView(R.layout.activity_study);
-        intiset_butten();
-
-        isSuccess=false;
-        study_info=findViewById(R.id.studyinfo);
-        study_info.setText("");
-
-        //是否学习成功
-        isStudySuccess();
-
-        //背景
-        WallpaperManager manager=WallpaperManager.getInstance(this);
-        Drawable drawable=manager.getDrawable();
-        this.getWindow().setBackgroundDrawable(drawable);
-
-        reminder=findViewById(R.id.reminder);
-        reminder.setText("1：请将手机对准电器并点击开关学习按钮\n2：根据电器响应结果选择是/否");
+        study=findViewById(R.id.study);
+        study.setOnClickListener(this);
+        tip=findViewById(R.id.tip);
+        flag=-1;
     }
-    protected void intiset_butten() {
-        button_power_studying=findViewById(R.id.power);
-        button_add_studying=findViewById(R.id.add);
-        button_minus_studying=findViewById(R.id.minus);
-    }
-    public void butten_power_study_onclick(View view) {
 
-    }
-    public void butten_add_study_onclick(View view) {
-
-    }
-    public void butten_minus_study_onclick(View view) {
-
-    }
-    public void isStudySuccess(){
-        if(isSuccess==true){
-            Intent intent=new Intent(activity_study.this,Main_Interface_Activity.class);
-            startActivity(intent);
-            activity_study.this.finish();
+    @Override
+    public void onClick(View view) {
+        switch (flag){
+            case -1:
+                tip.setText(R.string.study_s1);
+                study.setText(R.string.ok);
+                flag++;
+                break;
+            case 2:
+                tip.setText(R.string.study_s4);
+                flag++;
+                break;
+            case 0:
+            case 1:
+                tip.setText(getString(R.string.study_s2,btn[flag]));
+                flag++;
+                break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                tip.setText(getString(R.string.study_s3,btn[flag-1],22+flag-2));
+                flag++;
+                break;
+            case 9:
+                tip.setText(R.string.study_over);
+                app_intiset();
+                break;
         }
-        else {
-            study_info.setText("红外学习失败\n");
-        }
+    }
+
+    /**
+     * 界面跳转
+     */
+    private void app_intiset(){
+        /*
+        //界面跳转intent，并设置flags，清除活动堆栈并让跳转的界面置为活动堆栈底
+         */
+        Intent intent= new Intent(this,Main_Interface_Activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        /*
+        跳转界面，并传递android5.0转场动画bundle
+         */
+        Bundle bundle=ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+        startActivity(intent,bundle);
     }
 }

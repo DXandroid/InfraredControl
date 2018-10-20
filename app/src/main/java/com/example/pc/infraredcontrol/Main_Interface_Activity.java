@@ -1,11 +1,15 @@
 package com.example.pc.infraredcontrol;
 
+import android.app.Activity;
 import android.app.WallpaperManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.hardware.ConsumerIrManager;
+import android.os.strictmode.Violation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,11 +25,14 @@ public class Main_Interface_Activity extends AppCompatActivity {
 
     Button button_power,button_add,button_minus;
 
-    TextView t;
+    TextView t,f;
+
+    int F;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setEnterTransition(new Explode());
         setContentView(R.layout.activity_main_interface);
         intiset_button();
         //设定监听
@@ -42,7 +49,6 @@ public class Main_Interface_Activity extends AppCompatActivity {
                         button_power.setScaleY(1);
                         break;
                 }
-
                 return false;
             }
         });
@@ -53,15 +59,19 @@ public class Main_Interface_Activity extends AppCompatActivity {
         this.getWindow().setBackgroundDrawable(drawable);
 
         t=findViewById(R.id.get);
+        f=findViewById(R.id.number);
 
         can_infrared=false;
-        in_con=new Infrared_Control((ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE));
+        in_con=new Infrared_Control((ConsumerIrManager)getSystemService(CONSUMER_IR_SERVICE));
     }
 
 
+    /**
+     * 初始化按键
+     */
     private void intiset_button(){
         button_power=findViewById(R.id.power);
-        button_power.setEnabled(false);
+        //button_power.setEnabled(false);
         button_add=findViewById(R.id.add);
         button_add.setEnabled(false);
         button_minus=findViewById(R.id.minus);
@@ -70,8 +80,8 @@ public class Main_Interface_Activity extends AppCompatActivity {
 
     protected void onStart() {
         super.onStart();
-     //   if(in_con.equipment_judge_useful())
-           set_button_useful();
+//        if(in_con.equipment_judge_useful())
+//           set_button_useful();
     }
     /**
      * 当设备有红外可用时才使所有按键有效
@@ -82,14 +92,33 @@ public class Main_Interface_Activity extends AppCompatActivity {
     }
     public void button_power_onclick(View view){
         in_con.set_power();
+        if (in_con.isPower()) {
+            F = 25;
+            button_add.setEnabled(true);
+            button_minus.setEnabled(true);
+        }
+        else {
+            F = 00;
+            button_add.setEnabled(false);
+            button_minus.setEnabled(false);
+        }
+        set_f();
         //in_con.get_mag(t);
     }
     public void button_add_onclick(View view){
-
+        if(F<28)
+        F++;
+        set_f();
     }
     //github test
     public void button_minus_onclick(View view){
+        if(F>23)
+        F--;
+        set_f();
+    }
 
+    private void set_f(){
+        f.setText(String.valueOf(F));
     }
 
 }
