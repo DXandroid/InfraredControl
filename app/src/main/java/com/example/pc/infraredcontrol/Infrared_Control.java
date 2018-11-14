@@ -8,8 +8,10 @@ import com.example.pc.infraredcontrol.codecommand.Code_Command;
 
 public class Infrared_Control {
     ConsumerIrManager IR;
+    boolean isPower;
     Infrared_Control(ConsumerIrManager ir){
         IR=ir;
+        isPower=false;
     }
     /**
      *发送红外信息的函数
@@ -30,8 +32,13 @@ public class Infrared_Control {
         return false;
     }
 
+    public boolean isPower() {
+        return isPower;
+    }
+
     public void set_power(){
-        send_IRMag(38000, Code_Command.auto);
+        isPower=!isPower;
+        //send_IRMag(38000, Code_Command.auto);
     }
 
     public void get_mag(TextView show){

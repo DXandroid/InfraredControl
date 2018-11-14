@@ -4,80 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@android:color/holo_blue_dark"
     tools:context=".activity_study">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="212dp"
-        android:background="@android:color/transparent"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/add"
+        <TextView
+            android:id="@+id/tip"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-
-            android:alpha="0.65"
-            android:onClick="butten_add_study_onclick"
-            android:text="+学习" />
-
-        <Button
-            android:id="@+id/power"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:alpha="0.65"
-            android:onClick="butten_power_study_onclick"
-            android:text="开关学习" />
+            android:layout_height="167dp"
+            android:text="检测到你还未录入按键编码，请拿遥控器对准手机，点击下面的按键并按照提示进行按键录入学习"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
 
         <Button
-            android:id="@+id/minus"
+            android:id="@+id/study"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:alpha="0.65"
-            android:onClick="butten_minus_study_onclick"
-            android:text="-学习" />
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_dark"
+            android:text="开始学习"
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/studyinfo"
-        android:layout_width="369dp"
-        android:layout_height="134dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center_horizontal"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/reminder"
-        android:layout_width="364dp"
-        android:layout_height="103dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="368dp"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
