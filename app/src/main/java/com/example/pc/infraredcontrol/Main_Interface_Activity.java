@@ -5,7 +5,11 @@ import android.app.WallpaperManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.hardware.ConsumerIrManager;
+import android.icu.text.DateFormat;
+import android.icu.text.NumberFormat;
 import android.os.strictmode.Violation;
+import android.support.design.widget.TabLayout;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Explode;
@@ -14,9 +18,14 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.MotionEvent;
+import android.widget.Toolbar;
+
+import java.text.MessageFormat;
 
 public class Main_Interface_Activity extends AppCompatActivity {
 
@@ -27,6 +36,8 @@ public class Main_Interface_Activity extends AppCompatActivity {
 
     TextView t,f;
 
+
+
     int F;
 
     @Override
@@ -35,6 +46,7 @@ public class Main_Interface_Activity extends AppCompatActivity {
         getWindow().setEnterTransition(new Explode());
         setContentView(R.layout.activity_main_interface);
         intiset_button();
+
         //设定监听
         button_power.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -58,7 +70,7 @@ public class Main_Interface_Activity extends AppCompatActivity {
         Drawable drawable=manager.getDrawable();
         this.getWindow().setBackgroundDrawable(drawable);
 
-        t=findViewById(R.id.get);
+      //  t=findViewById(R.id.get);
         f=findViewById(R.id.number);
 
         can_infrared=false;
@@ -120,8 +132,5 @@ public class Main_Interface_Activity extends AppCompatActivity {
     private void set_f(){
         f.setText(String.valueOf(F));
     }
-
-
-
 
 }

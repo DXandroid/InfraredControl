@@ -4,11 +4,13 @@ import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -29,6 +31,8 @@ public class activity_study extends AppCompatActivity implements View.OnClickLis
         study.setOnClickListener(this);
         tip=findViewById(R.id.tip);
         flag=-1;
+
+
     }
 
     @Override
