@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
         //app_intiset();
     }
 
-    private boolean isTwitterChecked = false;
-    public void cc(View view){
-        isTwitterChecked = !isTwitterChecked;
-        final int[] stateSet = {android.R.attr.state_checked * (isTwitterChecked ? 1 : -1)};
-        iag.setImageState(stateSet, true);
-    }
+//    private boolean isTwitterChecked = false;
+//    public void cc(View view){
+//        isTwitterChecked = !isTwitterChecked;
+//        final int[] stateSet = {android.R.attr.state_checked * (isTwitterChecked ? 1 : -1)};
+//        iag.setImageState(stateSet, true);
+//    }
     /**
      * 界面跳转
      */
