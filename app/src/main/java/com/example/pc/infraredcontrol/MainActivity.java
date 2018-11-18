@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        app_intiset();
-        aClass=activity_study.class;
-        iag =findViewById(R.id.imageView);
-
         //app_intiset();
+//        aClass=activity_study.class;
+//        iag =findViewById(R.id.imageView);
+
+        app_intiset();
     }
 
 //    private boolean isTwitterChecked = false;
