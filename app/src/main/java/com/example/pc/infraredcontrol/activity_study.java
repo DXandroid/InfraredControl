@@ -71,7 +71,7 @@ public class activity_study extends AppCompatActivity implements View.OnClickLis
         /*
         //界面跳转intent，并设置flags，清除活动堆栈并让跳转的界面置为活动堆栈底
          */
-        Intent intent= new Intent(this,Main_Interface_Activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent= new Intent(this,Main_Interface_Activity.class);//.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         /*
         跳转界面，并传递android5.0转场动画bundle
          */
