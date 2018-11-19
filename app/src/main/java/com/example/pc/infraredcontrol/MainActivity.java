@@ -3,23 +3,36 @@ package com.example.pc.infraredcontrol;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     Class aClass;
+    ImageView ib;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        app_intiset();
-        aClass=activity_study.class;
+       /* ib=findViewById(R.id.ib);
+        Drawable drawable=ib.getDrawable();
+        ((Animatable)drawable).start();
+        aClass=activity_study.class;*/
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+app_intiset();
     }
 
     /**
