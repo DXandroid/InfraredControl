@@ -61,7 +61,7 @@ app_intiset();
         /*
         //界面跳转intent，并设置flags，清除活动堆栈并让跳转的界面置为活动堆栈底
          */
-        Intent intent= new Intent(this,activity_study.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent= new Intent(this,choose.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         /*
         跳转界面，并传递android5.0转场动画bundle
          */
