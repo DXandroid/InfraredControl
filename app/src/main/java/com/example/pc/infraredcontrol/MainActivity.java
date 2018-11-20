@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         aClass=activity_study.class;*/
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
