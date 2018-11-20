@@ -3,15 +3,20 @@ package com.example.pc.infraredcontrol;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     Class aClass;
     ImageView iag;
+    ImageView ib;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +26,26 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //app_intiset();
 //        aClass=activity_study.class;
 //        iag =findViewById(R.id.imageView);
 
         app_intiset();
+       /* ib=findViewById(R.id.ib);
+        Drawable drawable=ib.getDrawable();
+        ((Animatable)drawable).start();
+        aClass=activity_study.class;*/
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+app_intiset();
     }
 
 //    private boolean isTwitterChecked = false;
