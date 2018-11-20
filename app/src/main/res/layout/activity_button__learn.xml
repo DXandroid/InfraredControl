@@ -10,7 +10,7 @@
         layout="@layout/title" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/back"
         android:layout_width="62dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -67,20 +67,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
             android:text="取消"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@android:color/holo_blue_light"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
