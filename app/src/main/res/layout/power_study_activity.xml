@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="368dp"
+        android:layout_height="276dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="352dp"
+            android:layout_height="66dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <Button
+                android:id="@+id/power_study"
+                android:layout_width="176dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_power_onclick"
+                android:text="开关"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/mode_study"
+                android:layout_width="176dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_mode_onclick"
+                android:text="模式"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="352dp"
+            android:layout_height="66dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow2">
+            <Button
+                android:id="@+id/speed_stuay"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_speed_onclick"
+                android:text="风速"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/direction_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_dir_onclick"
+                android:text="风向"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/swing_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_swing_onclick"
+                android:text="扫风"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="352dp"
+            android:layout_height="66dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow">
+            <Button
+                android:id="@+id/minus_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_minus_onclick"
+                android:text="-"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/tit_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:text="温度"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/add_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_add_onclick"
+                android:text="+"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="352dp"
+            android:layout_height="66dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow3">
+            <Button
+                android:id="@+id/timing_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_timing_onclick"
+                android:text="定时"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/sleep_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_sleep_onclick"
+                android:text="睡眠"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/brainpower_study"
+                android:layout_width="117.3dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/screen_background_light"
+                android:onClick="setButton_bra_onclick"
+                android:text="智能遥控"
+                android:textSize="18sp" />
+        </TableRow>
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="setButton_back_onclick"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
