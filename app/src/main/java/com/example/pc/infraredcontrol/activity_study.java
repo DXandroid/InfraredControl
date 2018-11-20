@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -29,6 +30,8 @@ public class activity_study extends AppCompatActivity implements View.OnClickLis
         study.setOnClickListener(this);
         tip=findViewById(R.id.tip);
         flag=-1;
+
+
     }
 
     @Override

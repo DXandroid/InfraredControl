@@ -7,17 +7,29 @@ import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     Class aClass;
+    ImageView iag;
     ImageView ib;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//        aClass=activity_study.class;
+//        iag =findViewById(R.id.imageView);
+
+        app_intiset();
        /* ib=findViewById(R.id.ib);
         Drawable drawable=ib.getDrawable();
         ((Animatable)drawable).start();
@@ -36,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
 app_intiset();
     }
 
+//    private boolean isTwitterChecked = false;
+//    public void cc(View view){
+//        isTwitterChecked = !isTwitterChecked;
+//        final int[] stateSet = {android.R.attr.state_checked * (isTwitterChecked ? 1 : -1)};
+//        iag.setImageState(stateSet, true);
+//    }
     /**
      * 界面跳转
      */
