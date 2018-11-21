@@ -6,6 +6,8 @@
 
     <uses-permission android:name="android.permission.TRANSMIT_IR" />
     <!-- 声明调用红外设备的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <uses-feature android:name="android.hardware.ConsumerIrManager" />
     <uses-feature
         android:name="android.hardware.touchscreen"
@@ -32,8 +34,6 @@
         </activity>
         <activity android:name=".activity_study" />
         <activity android:name=".Main_Interface_Activity" />
-        <activity android:name=".power_study_activity" />
-        <activity android:name=".power_Activity" />
         <activity android:name=".choose" />
         <activity android:name=".Button_Learn"></activity>
         <activity android:name=".power_Activity"/>
