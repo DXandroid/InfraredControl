@@ -100,7 +100,7 @@
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
+            app:layout_constraintTop_toTopOf="@+id/devicename" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
