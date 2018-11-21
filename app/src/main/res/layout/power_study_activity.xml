@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include
+        android:id="@+id/include"
+        layout="@layout/title" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="368dp"
@@ -159,12 +162,12 @@
 
     <Button
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_blue_light"
         android:onClick="setButton_back_onclick"
-        android:text="Button"
+        android:text="返回"
+        android:textColor="@color/lb_action_text_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
