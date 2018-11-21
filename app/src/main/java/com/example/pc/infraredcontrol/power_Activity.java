@@ -37,6 +37,7 @@ public class power_Activity extends AppCompatActivity {
             button_set();
             text_set();
         }else {
+            button_set();
             button_off();
         }
     }

@@ -70,6 +70,7 @@ public class choose extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (EP.getlist_deviceLenght()!=0)
                 EP.openDevice((String)adapterView.getItemAtPosition(i));
+                app_intiset();
             }
         });
     }
