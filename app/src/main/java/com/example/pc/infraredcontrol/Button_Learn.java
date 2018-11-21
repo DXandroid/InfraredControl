@@ -26,6 +26,8 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
         learn = findViewById(R.id.learn);
         learn.setText(null/*EP.getButtonName()*/);
 
+
+
     }
 
     @Override
