@@ -17,7 +17,7 @@ public class power_Activity extends AppCompatActivity {
 
     EventProcessing EP;
     //显示text
-    TextView temp,speed_text,mode_text,direction_text,swing_text;
+    TextView temp,speed_text,mode_text,direction_text,swing_text,bra_text;
     //按钮
     Button button_power,button_mode,button_speed,button_dir,button_swing,button_minus,button_sleep,button_timing,button_add,button_bra,button_tit,button_study_temp;
     @Override
@@ -79,6 +79,7 @@ public class power_Activity extends AppCompatActivity {
         mode_text=(TextView)findViewById(R.id.mode_text);
         direction_text=(TextView)findViewById(R.id.direction_text);
         swing_text=(TextView)findViewById(R.id.swing_text);
+        bra_text=(TextView)findViewById(R.id.brainpower_text);
         //显示初始化的信息
         //温度
         temp.setText(EP.getDeviceStatus()[4]);
@@ -107,6 +108,8 @@ public class power_Activity extends AppCompatActivity {
             case 0:swing_text.setText("扫风关");break;
             case 1:swing_text.setText("扫风开");break;
         }
+        //智能模式默认为关
+        bra_text.setText("关闭");
     }
     /**
      * 按钮点击事件*/
@@ -449,7 +452,12 @@ public class power_Activity extends AppCompatActivity {
  * 智能模式键
  * */
     public void setButton_bra_onclick(View view) {
-
+        Toast toast;
+            switch (EP.intelligentMode()){
+                case 0: bra_text.setText("关");break;
+                case 1: bra_text.setText("开");break;
+                    default: toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();
+            }
         }
 /**
  * 进入学习事件键
