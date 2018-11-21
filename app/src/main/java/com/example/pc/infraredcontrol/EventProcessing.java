@@ -1,12 +1,14 @@
 package com.example.pc.infraredcontrol;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -20,6 +22,8 @@ public  class EventProcessing extends Application {
      * 保存的配置文件的文件名
      */
     private String file_name = "Device.json";
+
+    private String buttonName;
 
     /**
      * 已有的设备的设备编码字典列表
@@ -101,7 +105,7 @@ public  class EventProcessing extends Application {
      * @param <T> object对象类
      * @return 转换得到的json字符串
      */
-    private   <T>String objectToString(Device object) {
+    private   <T>String objectToString(T object) {
         Gson gson =new Gson();
         return gson.toJson(object);
     }
@@ -150,6 +154,9 @@ public  class EventProcessing extends Application {
      */
     private String readFileData(String fileName){
         String result = "";
+        String filePath = getApplicationContext().getFilesDir().getPath()+"/"+file_name;
+        if(!fileIsExists(filePath))
+            return null;
         try{
             FileInputStream fis = this.openFileInput(fileName);
             int lenght = fis.available();
@@ -171,7 +178,34 @@ public  class EventProcessing extends Application {
         intelligent=false;
     }
 
+    private boolean fileIsExists(String strFile) {
+        try
+        {
+            File f=new File(strFile);
+            if(!f.exists())
+            {
+                return false;
+            }
 
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private void saveConfigFile(Object configObject){
+        String fileContent = objectToString(configObject);
+        writeFileData(file_name,fileContent);
+    }
+
+
+
+    public int getlist_deviceLenght(){
+        return list_device.size();
+    }
 
     /**
      * 读取配置文件生成设备，返回一个字符串数组，存放设备名
@@ -179,6 +213,10 @@ public  class EventProcessing extends Application {
      */
     public String[] generateDevice(){
         String device = readFileData(file_name);
+        if(device==null){
+            list_device = new ArrayList<>();
+            return new String[]{""};
+        }
         list_device= stringToList(device,Device.class);
         String[] returnValue = new String[list_device.size()];
         int i=0;
@@ -198,6 +236,13 @@ public  class EventProcessing extends Application {
         Device newDevice = new Device();
         newDevice.name=deviceName;
         list_device.add(newDevice);
+
+
+        saveConfigFile(list_device);
+        current=newDevice;
+        initDeviceStatus();
+
+
         return 0;
     }
 
@@ -333,5 +378,15 @@ public  class EventProcessing extends Application {
 
     public int[] getDeviceStatus() {
         return deviceStatus;
+    }
+
+
+    public void setButtonName(String name){
+        buttonName=name;
+    }
+
+
+    public String getButtonName(){
+        return buttonName;
     }
 }
