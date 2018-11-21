@@ -329,4 +329,9 @@ public  class EventProcessing extends Application {
         intelligent=!intelligent;
         return intelligent?1:0;
     }
+
+
+    public int[] getDeviceStatus() {
+        return deviceStatus;
+    }
 }

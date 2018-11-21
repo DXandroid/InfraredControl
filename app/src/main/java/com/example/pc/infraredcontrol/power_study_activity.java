@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class power_study_activity extends AppCompatActivity {
+
+    EventProcessing EP;
     //按键
     Button button_back,study_power,study_mode,study_speed,study_dir,study_swing,study_minus,study_sleep,study_timing,study_add,study_bra,study_tit;
 
@@ -15,6 +17,7 @@ public class power_study_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.power_study_activity);
         setButton();
+        EP = (EventProcessing) getApplication();
     }
 
     /***

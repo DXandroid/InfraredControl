@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pc.infraredcontrol">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.pc.infraredcontrol"
+    tools:ignore="MissingLeanbackLauncher">
 
     <uses-permission android:name="android.permission.TRANSMIT_IR" />
     <!-- 声明调用红外设备的权限 -->
@@ -27,7 +29,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity_study" />
-        <activity android:name=".Main_Interface_Activity"></activity>
+        <activity android:name=".Main_Interface_Activity"/>
+        <activity android:name=".power_Activity"/>
+        <activity android:name=".power_study_activity">
+    </activity>
     </application>
 
 </manifest>
