@@ -329,8 +329,9 @@ public  class EventProcessing extends Application {
         intelligent=!intelligent;
         return intelligent?1:0;
     }
-    /**
-     * 智能模式开关
-     * @return 操作码 返回1为开，返回0为关，返回-1为失败
-     */
+
+
+    public int[] getDeviceStatus() {
+        return deviceStatus;
+    }
 }
