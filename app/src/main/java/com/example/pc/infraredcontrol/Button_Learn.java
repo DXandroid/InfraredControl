@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Button_Learn extends AppCompatActivity implements View.OnClickListener{
 
     EventProcessing EP;
-    Button back, cancel, save;
+    Button back, cancel, save,learn;
     int[] code;
 
     @Override
@@ -23,6 +23,8 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
         save = findViewById(R.id.save);
         back = findViewById(R.id.back);
         back.setOnClickListener(this);
+        learn = findViewById(R.id.learn);
+        learn.setText(null/*EP.getButtonName()*/);
 
     }
 
@@ -30,6 +32,7 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         setButton();
+
 
     }
 
