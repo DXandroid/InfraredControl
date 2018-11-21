@@ -1,14 +1,16 @@
 package com.example.pc.infraredcontrol;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
-public class Button_Learn extends AppCompatActivity {
+public class Button_Learn extends AppCompatActivity implements View.OnClickListener{
 
     EventProcessing EP;
-    Button back, cancel, save;
+    Button back, cancel, save,learn;
     int[] code;
 
     @Override
@@ -16,9 +18,13 @@ public class Button_Learn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button__learn);
         EP = (EventProcessing) getApplication();
-        back = findViewById(R.id.back);
+
         cancel = findViewById(R.id.cancel);
         save = findViewById(R.id.save);
+        back = findViewById(R.id.back);
+        back.setOnClickListener(this);
+        learn = findViewById(R.id.learn);
+        learn.setText(null/*EP.getButtonName()*/);
 
     }
 
@@ -26,6 +32,8 @@ public class Button_Learn extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         setButton();
+
+
     }
 
     private void setButton(){
@@ -38,5 +46,11 @@ public class Button_Learn extends AppCompatActivity {
             save.setBackgroundColor(Color.parseColor("#f34649"));
         }
     }
-
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.back:
+                this.finish();
+                break;
+        }
+    }
 }

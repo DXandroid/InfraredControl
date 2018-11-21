@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class power_study_activity extends AppCompatActivity {
+
+    EventProcessing EP;
     //按键
     Button button_back,study_power,study_mode,study_speed,study_dir,study_swing,study_minus,study_sleep,study_timing,study_add,study_bra,study_tit;
 
@@ -15,6 +17,7 @@ public class power_study_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.power_study_activity);
         setButton();
+        EP = (EventProcessing) getApplication();
     }
 
     /***
@@ -45,34 +48,46 @@ public class power_study_activity extends AppCompatActivity {
     }
     //模式学习事件
     public void setStudy_mode_onclick(View view){
-
+            setActivity();
     }
     //风速学习事件
     public void setStudy_speed_onclick(View view){
-
+            setActivity();
     }
     //风向学习事件
     public void setStudy_dir_onclick(View view){
-
+            setActivity();
     }
     //扫风学习事件
     public void setStudy_swing_onclick(View view){
-
+            setActivity();
     }
     //减温度学习事件
     public void setStudy_minus_onclick(View view){
-
+            setActivity();
     }
     //加温度学习事件
     public void setStudy_add_onclick(View view){
-
+            setActivity();
     }
     //定时学习事件
     public void setStudy_timing_onclick(View view){
-
+            setActivity();
     }
     //智能模式学习事件
     public void setStudy_bra_onclick(View view){
-
+            setActivity();
+    }
+    //开关学习事件
+    public void setStudy_power(View view){
+            setActivity();
+    }
+    /**
+     * 跳转到按钮学习界面
+     * */
+    public  void setActivity(){
+        Intent intent=new Intent();
+        intent.setClass(power_study_activity.this,Button_Learn.class);
+        startActivity(intent);
     }
 }

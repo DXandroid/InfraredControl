@@ -376,6 +376,11 @@ public  class EventProcessing extends Application {
     }
 
 
+    public int[] getDeviceStatus() {
+        return deviceStatus;
+    }
+
+
     public void setButtonName(String name){
         buttonName=name;
     }
