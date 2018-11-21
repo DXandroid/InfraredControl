@@ -43,7 +43,7 @@
                 android:layout_width="176dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_mode_onclick"
+                android:onClick="setStudy_mode_onclick"
                 android:text="模式"
                 android:textSize="24sp" />
 

@@ -1,6 +1,7 @@
 package com.example.pc.infraredcontrol;
 
 import android.app.Application;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -15,6 +16,12 @@ import java.util.List;
 import java.util.Map;
 
 public  class EventProcessing extends Application {
+
+
+    /**
+     * 保存按键名称
+     */
+    String ButtonName;
 
     /**
      * 保存的配置文件的文件名
@@ -334,4 +341,6 @@ public  class EventProcessing extends Application {
     public int[] getDeviceStatus() {
         return deviceStatus;
     }
+
+
 }
