@@ -2,6 +2,7 @@ package com.example.pc.infraredcontrol;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
+import android.app.LauncherActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.drm.DrmErrorEvent;
@@ -15,13 +16,19 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class choose extends AppCompatActivity {
     EventProcessing EP;
     private ListView devicelist;
     private  String[] names;
+
+    //定义一个simpleAdapter,供列表项使用
+    SimpleAdapter simpleAdapter;
 
     class MyBaseAdapter extends BaseAdapter {
 
@@ -40,6 +47,9 @@ public class choose extends AppCompatActivity {
             return position;
         }
 
+
+
+
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {//组装数据
             View view=View.inflate(choose.this,R.layout.sublist,null);//在list_item中有两个id,现在要把他们拿过来
@@ -48,6 +58,7 @@ public class choose extends AppCompatActivity {
             mTextView.setText(names[position]);
             //组装玩开始返回
             return view;
+
         }
     }
 
@@ -65,6 +76,45 @@ public class choose extends AppCompatActivity {
         names=EP.generateDevice();
         devicelist=findViewById(R.id.device);
         devicelist.setAdapter(new MyBaseAdapter());
+
+
+        //长按监听
+        /*
+        devicelist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {		@Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                       final int position, long id) {
+            //定义AlertDialog.Builder对象，当长按列表项的时候弹出确认删除对话框
+            AlertDialog.Builder builder=new AlertDialog.Builder(choose.this);
+            builder.setMessage("确定删除?");
+            builder.setTitle("提示");
+
+            //添加AlertDialog.Builder对象的setPositiveButton()方法
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    simpleAdapter.notifyDataSetChanged();
+                    Toast.makeText(getBaseContext(), "删除列表项", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            //添加AlertDialog.Builder对象的setNegativeButton()方法
+            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            builder.create().show();
+            return false;
+        }
+        });*/
+
+
+
         devicelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -101,4 +151,6 @@ public class choose extends AppCompatActivity {
          */
         startActivity(intent/*, ActivityOptions.makeSceneTransitionAnimation(this).toBundle()*/);
     }
+
+
 }
