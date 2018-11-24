@@ -31,7 +31,7 @@
                 android:layout_width="176dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_power_onclick"
+                android:onClick="setStudy_power_onclick"
                 android:text="开关"
                 android:textSize="24sp" />
 
@@ -61,7 +61,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_speed_onclick"
+                android:onClick="setStudy_speed_onclick"
                 android:text="风速"
                 android:textSize="18sp" />
 
@@ -70,7 +70,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_dir_onclick"
+                android:onClick="setStudy_dir_onclick"
                 android:text="风向"
                 android:textSize="18sp" />
 
@@ -79,7 +79,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_swing_onclick"
+                android:onClick="setStudy_swing_onclick"
                 android:text="扫风"
                 android:textSize="18sp" />
         </TableRow>
@@ -99,7 +99,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_minus_onclick"
+                android:onClick="setStudy_minus_onclick"
                 android:text="-"
                 android:textSize="24sp" />
 
@@ -116,7 +116,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_add_onclick"
+                android:onClick="setStudy_add_onclick"
                 android:text="+"
                 android:textSize="24sp" />
 
@@ -133,7 +133,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_timing_onclick"
+                android:onClick="setStudy_timing_onclick"
                 android:text="定时"
                 android:textSize="18sp" />
 
@@ -142,7 +142,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_sleep_onclick"
+                android:onClick="setStudy_sleep_onclick"
                 android:text="睡眠"
                 android:textSize="18sp" />
 
@@ -151,7 +151,7 @@
                 android:layout_width="117.3dp"
                 android:layout_height="match_parent"
                 android:background="@android:drawable/screen_background_light"
-                android:onClick="setButton_bra_onclick"
+                android:onClick="setStudy_bra_onclick"
                 android:text="智能遥控"
                 android:textSize="18sp" />
         </TableRow>

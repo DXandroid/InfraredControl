@@ -24,7 +24,7 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
         back = findViewById(R.id.back);
         back.setOnClickListener(this);
         learn = findViewById(R.id.learn);
-        learn.setText(null/*EP.getButtonName()*/);
+        learn.setText(EP.getButtonName());
 
 
 

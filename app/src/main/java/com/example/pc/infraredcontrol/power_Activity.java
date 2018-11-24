@@ -17,7 +17,7 @@ public class power_Activity extends AppCompatActivity {
 
     EventProcessing EP;
     //显示text
-    TextView temp,speed_text,mode_text,direction_text,swing_text,bra_text;
+    TextView temp,speed_text,mode_text,direction_text,swing_text,bra_text,sleep_text,timing_text;
     //按钮
     Button button_power,button_mode,button_speed,button_dir,button_swing,button_minus,button_sleep,button_timing,button_add,button_bra,button_tit,button_study_temp;
     @Override
@@ -81,6 +81,8 @@ public class power_Activity extends AppCompatActivity {
         direction_text=(TextView)findViewById(R.id.direction_text);
         swing_text=(TextView)findViewById(R.id.swing_text);
         bra_text=(TextView)findViewById(R.id.brainpower_text);
+        timing_text=(TextView)findViewById(R.id.timing_text);
+        sleep_text=(TextView)findViewById(R.id.speed_text);
         //显示初始化的信息
         //温度
         temp.setText(EP.getDeviceStatus()[4]);
@@ -111,6 +113,10 @@ public class power_Activity extends AppCompatActivity {
         }
         //智能模式默认为关
         bra_text.setText("关闭");
+        //睡眠模式默认为关
+        sleep_text.setText("睡眠关");
+        //定时模式默认为关
+        timing_text.setText("定时关");
     }
     /**
      * 按钮点击事件*/
@@ -421,13 +427,23 @@ public class power_Activity extends AppCompatActivity {
     * 定时事件
     * */
     public void setButton_timing_onclick(View view) {
-
+            Toast toast;
+            switch (EP.sendInfrared("timing")){
+                case 0: timing_text.setText("定时开");break;
+                case 1: toast=Toast.makeText(power_Activity.this,"请先进行学习",Toast.LENGTH_LONG);toast.show();break;
+                case -1:toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();break;
+            }
         }
 /**
  * 睡眠事件
  * */
     public void setButton_sleep_onclick(View view) {
-
+        Toast toast;
+        switch (EP.sendInfrared("sleep")){
+            case 0: sleep_text.setText("睡眠开");break;
+            case 1: toast=Toast.makeText(power_Activity.this,"请先进行学习",Toast.LENGTH_LONG);toast.show();break;
+            case -1:toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();break;
+        }
         }
 /**
  * 扫风事件
@@ -467,5 +483,13 @@ public class power_Activity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(power_Activity.this, power_study_activity.class);//从power_activity页面跳转至study页面
         startActivity(intent);
+    }
+    /**
+    * 返回添加设备事件
+    * */
+    public void setButton_back_add_onclick(View view){
+    Intent intent=new Intent();
+    intent.setClass(power_Activity.this,choose.class);
+    startActivity(intent);
     }
 }
