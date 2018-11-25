@@ -75,38 +75,7 @@ public class choose extends AppCompatActivity {
         setAdapter();
 
 
-        //长按监听
 
-        devicelist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-            //定义AlertDialog.Builder对象，当长按列表项的时候弹出确认删除对话框
-            new AlertDialog.Builder(choose.this)
-            .setMessage("确定删除?")
-            .setTitle("提示")
-
-                //添加AlertDialog.Builder对象的setPositiveButton()方法
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-                        Toast.makeText(getBaseContext(), "删除列表项", Toast.LENGTH_SHORT).show();
-                    }
-                })
-
-            //添加AlertDialog.Builder对象的setNegativeButton()方法
-           .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            })
-            .create().show();
-            return true;
-        }
-        });
 
 
 
@@ -139,6 +108,41 @@ public class choose extends AppCompatActivity {
                 app_intiset();
             }
         });
+
+        //长按监听
+
+        devicelist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position, long id) {
+                //定义AlertDialog.Builder对象，当长按列表项的时候弹出确认删除对话框
+                new AlertDialog.Builder(choose.this)
+                        .setMessage("确定删除?")
+                        .setTitle("提示")
+
+                        //添加AlertDialog.Builder对象的setPositiveButton()方法
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                EP.subDevice((String) parent.getItemAtPosition(position));
+                                names=EP.getDeviceStringArray();
+                                setAdapter();
+                                Toast.makeText(getBaseContext(), "删除列表项", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+
+                        //添加AlertDialog.Builder对象的setNegativeButton()方法
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .create().show();
+                return true;
+            }
+        });
+
     }
 
 
