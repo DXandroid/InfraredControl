@@ -35,7 +35,6 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
         super.onStart();
         setButton();
 
-
     }
 
     private void setButton(){
@@ -53,6 +52,17 @@ public class Button_Learn extends AppCompatActivity implements View.OnClickListe
             case R.id.back:
                 this.finish();
                 break;
+            case R.id.cancel:
+                if (cancel.getText().equals("取消"))
+                    this.finish();
+                else if(cancel.getText().equals("重新学习"))
+                    setButton();
+                break;
+            case R.id.save:
+                EP.setButtonCode(EP.getButtonName(),code);
+                this.finish();
+                break;
+
         }
     }
 }

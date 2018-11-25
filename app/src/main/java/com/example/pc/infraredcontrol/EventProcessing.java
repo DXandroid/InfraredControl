@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public  class EventProcessing extends Application {
 
@@ -218,6 +219,10 @@ public  class EventProcessing extends Application {
             return new String[]{""};
         }
         list_device= stringToList(device,Device.class);
+        return getDeviceStringArray();
+    }
+
+    public String[] getDeviceStringArray(){
         String[] returnValue = new String[list_device.size()];
         int i=0;
         for (Device t:list_device){
@@ -227,6 +232,21 @@ public  class EventProcessing extends Application {
         return returnValue;
     }
 
+    public int subDevice(String device){
+        boolean isOk=false;
+        for (Device t:list_device){
+            if(t.name.equals(device)){
+                list_device.remove(t);
+                isOk=true;
+                break;
+            }
+        }
+        if(isOk) {
+            saveConfigFile(list_device);
+            return 0;
+        }
+        return -1;
+    }
     /**
      * 添加设备的方法，传递一个字符串参数作为设备名字
      * @param deviceName 要添加的设备名字
@@ -267,7 +287,13 @@ public  class EventProcessing extends Application {
      * @return 红外编码数组，返回NULL为获取失败
      */
     public int[] getCode(){
-        return new int[]{0};
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        int i= (int) (Math.random()*2);
+        return i<1?new int[]{0}:null;
     }
 
     /**
@@ -315,6 +341,7 @@ public  class EventProcessing extends Application {
             default:
                 return -1;
         }
+        saveConfigFile(list_device);
         return 0;
     }
 
