@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public  class EventProcessing extends Application {
 
@@ -286,7 +287,13 @@ public  class EventProcessing extends Application {
      * @return 红外编码数组，返回NULL为获取失败
      */
     public int[] getCode(){
-        return new int[]{0};
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        int i= (int) (Math.random()*2);
+        return i<1?new int[]{0}:null;
     }
 
     /**
