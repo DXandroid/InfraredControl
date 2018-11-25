@@ -28,12 +28,11 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="383dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="#3da19e9e"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintDimensionRatio="w,15:10.3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,137 +43,158 @@
             android:id="@+id/temp_text"
             android:layout_width="130dp"
             android:layout_height="110dp"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="00"
             android:textColor="@android:color/background_dark"
             android:textSize="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sleep_text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
 
         <TextView
             android:id="@+id/text"
             android:layout_width="68dp"
             android:layout_height="38dp"
-            android:layout_marginStart="244dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="℃"
             android:textColor="@android:color/background_dark"
             android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/temp_text"
+            app:layout_constraintStart_toEndOf="@+id/temp_text"
+            app:layout_constraintTop_toTopOf="@+id/temp_text" />
 
         <TextView
             android:id="@+id/speed_text"
             android:layout_width="55dp"
             android:layout_height="31dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="168dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="风速"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/mode_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
         <TextView
             android:id="@+id/mode_text"
             android:layout_width="59dp"
             android:layout_height="32dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="168dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="模式"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/brainpower_text"
+            app:layout_constraintStart_toEndOf="@+id/speed_text"
+            app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
         <TextView
             android:id="@+id/direction_text"
-            android:layout_width="62dp"
+            android:layout_width="66dp"
             android:layout_height="32dp"
-            android:layout_marginTop="156dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="风向"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/brainpower_text"
+            app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
         <TextView
             android:id="@+id/swing_text"
             android:layout_width="57dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="104dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="扫风"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/sleep_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/speed_text" />
 
         <TextView
             android:id="@+id/brainpower_text"
-            android:layout_width="71dp"
+            android:layout_width="63dp"
             android:layout_height="33dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="168dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="智能"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/direction_text"
+            app:layout_constraintStart_toEndOf="@+id/mode_text"
+            app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
         <TextView
             android:id="@+id/sleep_text"
             android:layout_width="55dp"
             android:layout_height="33dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="睡眠"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/timing_text"
+            app:layout_constraintStart_toEndOf="@+id/swing_text"
+            app:layout_constraintTop_toBottomOf="@+id/brainpower_text" />
 
         <TextView
             android:id="@+id/timing_text"
-            android:layout_width="66dp"
-            android:layout_height="29dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="116dp"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="定时"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/sleep_text"
+            app:layout_constraintTop_toBottomOf="@+id/direction_text" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
-        android:layout_height="272dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="273dp"
         android:background="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,14:10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="352dp"
             android:layout_height="66dp"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableRow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
@@ -203,8 +223,9 @@
             android:id="@+id/tableRow"
             android:layout_width="352dp"
             android:layout_height="66dp"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableRow3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
@@ -242,8 +263,9 @@
             android:id="@+id/tableRow3"
             android:layout_width="352dp"
             android:layout_height="66dp"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableRow4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableRow">
@@ -277,10 +299,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tableRow4"
             android:layout_width="352dp"
             android:layout_height="66dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableRow3">

@@ -70,7 +70,6 @@ public class power_Activity extends AppCompatActivity {
         button_speed.setEnabled(false);
         button_swing.setEnabled(false);
     }
-
     /**
      * 初始化显示温度等信息的textview
      * */
@@ -143,7 +142,6 @@ public class power_Activity extends AppCompatActivity {
     /**
      * 温度增加按钮
      * */
-
     public void setButton_add_onclick(View view) {
         Toast toast;
         switch (EP.getDeviceStatus()[4]){
@@ -355,7 +353,6 @@ public class power_Activity extends AppCompatActivity {
             }break;
         }
         }
-
     /**
      * 模式事件
      * */
@@ -394,11 +391,9 @@ public class power_Activity extends AppCompatActivity {
             }break;
         }
     }
-
-
     /**
-     * 风向
-     * */
+    * 风向
+    * */
     public void setButton_dir_onclick(View view) {
         Toast toast;
         switch (EP.getDeviceStatus()[3]){
@@ -422,8 +417,7 @@ public class power_Activity extends AppCompatActivity {
             }break;
         }
     }
-
-   /**
+    /**
     * 定时事件
     * */
     public void setButton_timing_onclick(View view) {
@@ -434,9 +428,9 @@ public class power_Activity extends AppCompatActivity {
                 case -1:toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();break;
             }
         }
-/**
- * 睡眠事件
- * */
+    /**
+    * 睡眠事件
+    * */
     public void setButton_sleep_onclick(View view) {
         Toast toast;
         switch (EP.sendInfrared("sleep")){
@@ -445,9 +439,9 @@ public class power_Activity extends AppCompatActivity {
             case -1:toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();break;
         }
         }
-/**
- * 扫风事件
- * */
+    /**
+    * 扫风事件
+    * */
     public void setButton_swing_onclick(View view) {
         Toast toast;
         switch (EP.getDeviceStatus()[5]){
@@ -465,9 +459,9 @@ public class power_Activity extends AppCompatActivity {
             }break;
         }
         }
-/**
- * 智能模式键
- * */
+    /**
+    * 智能模式键
+    * */
     public void setButton_bra_onclick(View view) {
         Toast toast;
             switch (EP.intelligentMode()){
@@ -476,9 +470,9 @@ public class power_Activity extends AppCompatActivity {
                     default: toast=Toast.makeText(power_Activity.this,"发送失败",Toast.LENGTH_LONG);toast.show();
             }
         }
-/**
- * 进入学习事件键
- * */
+    /**
+    * 进入学习事件键
+    * */
     public void setButton_study_temp_onclick(View view){
         Intent intent = new Intent();
         intent.setClass(power_Activity.this, power_study_activity.class);//从power_activity页面跳转至study页面

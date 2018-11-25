@@ -19,7 +19,6 @@ public class power_study_activity extends AppCompatActivity {
         setButton();
         EP = (EventProcessing) getApplication();
     }
-
     /***
      * 按键
      */
@@ -41,7 +40,6 @@ public class power_study_activity extends AppCompatActivity {
     /**
      * 设置点击事件
      * */
-
     //模式学习事件
     public void setStudy_mode_onclick(View view){
             setActivity();
@@ -93,14 +91,16 @@ public class power_study_activity extends AppCompatActivity {
         EP.setButtonName(study_sleep.getText().toString());
     }
     /**
-     * 跳转按钮界面
+     * 按钮跳转界面事件
      * */
     public  void setActivity(){
         Intent intent=new Intent();
         intent.setClass(power_study_activity.this,Button_Learn.class);
         startActivity(intent);
     }
-     //返回power 界面
+     /**
+      * 返回power按钮事件
+      * */
     public  void setButton_back_onclick(View view){
         Intent intent=new Intent();
         intent.setClass(power_study_activity.this,power_Activity.class);
