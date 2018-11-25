@@ -240,7 +240,11 @@ public  class EventProcessing extends Application {
                 break;
             }
         }
-        return isOk?0:-1;
+        if(isOk) {
+            saveConfigFile(list_device);
+            return 0;
+        }
+        return -1;
     }
     /**
      * 添加设备的方法，传递一个字符串参数作为设备名字
@@ -330,6 +334,7 @@ public  class EventProcessing extends Application {
             default:
                 return -1;
         }
+        saveConfigFile(list_device);
         return 0;
     }
 
