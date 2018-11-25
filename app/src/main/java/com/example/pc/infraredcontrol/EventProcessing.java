@@ -218,6 +218,10 @@ public  class EventProcessing extends Application {
             return new String[]{""};
         }
         list_device= stringToList(device,Device.class);
+        return getDeviceStringArray();
+    }
+
+    public String[] getDeviceStringArray(){
         String[] returnValue = new String[list_device.size()];
         int i=0;
         for (Device t:list_device){
@@ -227,6 +231,17 @@ public  class EventProcessing extends Application {
         return returnValue;
     }
 
+    public int subDevice(String device){
+        boolean isOk=false;
+        for (Device t:list_device){
+            if(t.name.equals(device)){
+                list_device.remove(t);
+                isOk=true;
+                break;
+            }
+        }
+        return isOk?0:-1;
+    }
     /**
      * 添加设备的方法，传递一个字符串参数作为设备名字
      * @param deviceName 要添加的设备名字

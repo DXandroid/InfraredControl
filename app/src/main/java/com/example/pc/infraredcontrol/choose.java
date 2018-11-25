@@ -27,8 +27,6 @@ public class choose extends AppCompatActivity {
     private ListView devicelist;
     private  String[] names;
 
-    //定义一个simpleAdapter,供列表项使用
-    SimpleAdapter simpleAdapter;
 
     class MyBaseAdapter extends BaseAdapter {
 
@@ -74,8 +72,7 @@ public class choose extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         names=EP.generateDevice();
-        devicelist=findViewById(R.id.device);
-        devicelist.setAdapter(new MyBaseAdapter());
+        setAdapter();
 
 
         //长按监听
@@ -113,14 +110,7 @@ public class choose extends AppCompatActivity {
 
 
 
-        devicelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (EP.getlist_deviceLenght()!=0)
-                EP.openDevice((String)adapterView.getItemAtPosition(i));
-                app_intiset();
-            }
-        });
+
     }
 
     public void ddt(View view){
@@ -136,6 +126,19 @@ public class choose extends AppCompatActivity {
                                 app_intiset();
                             }
                         }).create().show();
+    }
+
+    private void setAdapter(){
+        devicelist=findViewById(R.id.device);
+        devicelist.setAdapter(new MyBaseAdapter());
+        devicelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (EP.getlist_deviceLenght()!=0)
+                    EP.openDevice((String)adapterView.getItemAtPosition(i));
+                app_intiset();
+            }
+        });
     }
 
 
