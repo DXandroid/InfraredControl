@@ -56,7 +56,7 @@ public class choose extends AppCompatActivity {
             TextView mTextView=view.findViewById(R.id.devicename);
             //组件一拿到，开始组装
             mTextView.setText(names[position]);
-            //组装玩开始返回
+            //组装完开始返回
             return view;
 
         }
@@ -79,39 +79,37 @@ public class choose extends AppCompatActivity {
 
 
         //长按监听
-        /*
-        devicelist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {		@Override
-        public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                       final int position, long id) {
+
+        devicelist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
             //定义AlertDialog.Builder对象，当长按列表项的时候弹出确认删除对话框
-            AlertDialog.Builder builder=new AlertDialog.Builder(choose.this);
-            builder.setMessage("确定删除?");
-            builder.setTitle("提示");
+            new AlertDialog.Builder(choose.this)
+            .setMessage("确定删除?")
+            .setTitle("提示")
 
-            //添加AlertDialog.Builder对象的setPositiveButton()方法
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                //添加AlertDialog.Builder对象的setPositiveButton()方法
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                    simpleAdapter.notifyDataSetChanged();
-                    Toast.makeText(getBaseContext(), "删除列表项", Toast.LENGTH_SHORT).show();
-                }
-            });
+
+                        Toast.makeText(getBaseContext(), "删除列表项", Toast.LENGTH_SHORT).show();
+                    }
+                })
 
             //添加AlertDialog.Builder对象的setNegativeButton()方法
-            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-
+           .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
+                    dialog.dismiss();
                 }
-            });
-
-            builder.create().show();
-            return false;
+            })
+            .create().show();
+            return true;
         }
-        });*/
+        });
 
 
 
